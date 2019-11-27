@@ -20,10 +20,12 @@ const Detail = props => {
     dispatch({ type: UPDATE_CART });
     API.getProduct(props.match.params.id)
       .then(res => {
-        console.log(res)
+        console.log('SET CURRENT PRODUCT RES', res)
         dispatch({ type: SET_CURRENT_PRODUCT, product: res.data });
+        console.log("cart length:", state.cart.length)
         if (state.cart.length === 0) {
           idbPromise("best", "cart", "get").then(results => {
+            console.log("RESULTS", results)
             dispatch({ type: ADD_ALL_TO_CART, cart: results });
           });
         }
@@ -31,7 +33,10 @@ const Detail = props => {
       .catch(err => console.log(err));
   }, []);
 
+  console.log("CURRENT PRODUCT STATE", state)
+
   const addToCart = () => {
+    console.log("addtothecart: ", state.currentProduct)
     dispatch({
       type: ADD_TO_CART,
       product: state.currentProduct
@@ -87,7 +92,9 @@ const Detail = props => {
 
   return (
     <>
-      {state.currentProduct && state.cart ? (
+      {state.currentProduct
+       && state.cart
+       ? (
         <Container fluid >
           <Row>
             <Col size="md-2">

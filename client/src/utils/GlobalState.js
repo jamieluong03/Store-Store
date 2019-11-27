@@ -1,7 +1,7 @@
 import React, { createContext, useReducer, useContext } from "react";
 import {
   SET_CURRENT_PRODUCT,
-  REMOVE_PRODUCT,
+  // REMOVE_PRODUCT,
   UPDATE_PRODUCTS,
   ADD_PRODUCT,
   ADD_TO_CART,
@@ -15,17 +15,22 @@ const StoreContext = createContext();
 const { Provider } = StoreContext;
 
 const reducer = (state, action) => {
+  console.log("REDUCER:", state, action)
+  
   switch (action.type) {
     case SET_CURRENT_PRODUCT:
-      console.log('SET CURRENT ACTION', action);
+      console.log('SET CURRENT PRODUCT ACTION', action);
       return {
         ...state,
         currentProduct: action.product,
         loading: false
       };
     
-    case REMOVE_PRODUCT:
-      return {};
+    // case REMOVE_PRODUCT:
+    //   return {
+    //     ...state,
+    //     product: 
+    //   };
 
     case UPDATE_PRODUCTS:
       console.log('UPDATE ACTION', action);
@@ -54,7 +59,7 @@ const reducer = (state, action) => {
     case ADD_ALL_TO_CART:
       return {
         ...state,
-        cart: [action.product, ...state.cart],
+        cart: [...action.cart, ...state.cart],
         loading: false
       };
 
@@ -69,8 +74,8 @@ const reducer = (state, action) => {
       console.log('REMOVE FROM CART ACTION', action);
       return {
         ...state,
-        cart: state.cart.filter((product) => {
-          return product._id !== action._id;
+        cart: state.cart.filter(product => {
+          return product.productId !== action.productId;
         })
       };
 
@@ -90,7 +95,7 @@ const StoreProvider = ({ value = [], ...props }) => {
     products: [],
     currentProduct: {
       _id: 0,
-      thumbnail_url: "",
+      image: "",
       name: "",
       short_description: "",
       salePrice: ""

@@ -1,5 +1,5 @@
 export const UPDATE_PRODUCTS = "UPDATE_PRODUCTS";
-export const REMOVE_PRODUCT = "REMOVE_PRODUCT";
+// export const REMOVE_PRODUCT = "REMOVE_PRODUCT";
 export const SET_CURRENT_PRODUCT = "SET_CURRENT_PRODUCT";
 export const ADD_PRODUCT = "ADD_PRODUCT";
 export const LOADING = "LOADING";

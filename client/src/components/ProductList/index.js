@@ -12,9 +12,12 @@ function ProductList() {
   const getProducts = () => {
     dispatch({ type: LOADING });
     API.getProducts().then(results => {
+      console.log(results)
+      let products = results.data.filter(item => item.productId !== null);
+      console.log('PRODUCTS', products);
       dispatch({
         type: UPDATE_PRODUCTS,
-        products: results.data
+        products: products
       })
       
     })
