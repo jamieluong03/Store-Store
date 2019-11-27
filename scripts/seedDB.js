@@ -7,27 +7,36 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactcms");
 
 const productsSeed = [
   {
-    title: "Hello World",
+    name: "Hello World",
     seller: "Walmart",
     description:
       "Welcome to your first post! To create posts create a title and body. Don't forget to include your screen name!",
-    thumbnail: "https://placekitten.com/200/300",
+    short_description: "Walmart product",
+    thumbnail_url: "https://placekitten.com/200/300",
+    flash_day: "one",
+    salePrice: 35,
     post_date: new Date(Date.now())
   },
   {
-    title: "The Second Post",
+    name: "The Second Post",
     seller: "Amazon",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    thumbnail: "https://placekitten.com/200/300",
+    short_description: "Amazon product",
+    thumbnail_url: "https://placekitten.com/200/300",
+    flash_day: "two",
+    salePrice: 40,
     post_date: new Date(Date.now())
   },
   {
-    title: "Another One",
+    name: "Another One",
     seller: "Alec",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    thumbnail: "https://placekitten.com/200/300",
+    short_description: "Alec product",
+    thumbnail_url: "https://placekitten.com/200/300",
+    flash_day: "three",
+    salePrice: 50,
     post_date: new Date(Date.now())
   }
 ];

@@ -52,7 +52,11 @@ const reducer = (state, action) => {
       };
 
     case ADD_ALL_TO_CART:
-      return {};
+      return {
+        ...state,
+        cart: [action.product, ...state.cart],
+        loading: false
+      };
 
     case UPDATE_CART:
       return {
@@ -86,9 +90,10 @@ const StoreProvider = ({ value = [], ...props }) => {
     products: [],
     currentProduct: {
       _id: 0,
-      title: "",
-      body: "",
-      author: ""
+      thumbnail_url: "",
+      name: "",
+      short_description: "",
+      salePrice: ""
     },
     cart: [],
     loading: false
