@@ -32,6 +32,6 @@ app.use(function(err, req, res, next) {
 mongoose.connect(process.env.MONGODB_URI || "mongodb://<dbuser>:<dbpassword>@ds251158.mlab.com:51158/heroku_wggvt9x9");
 
 // Start the API server
-app.listen(PORT, function() {
+app.listen(process.env.PORT || PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
