@@ -29,9 +29,9 @@ app.use(function(err, req, res, next) {
 });
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://<dbuser>:<dbpassword>@ds251158.mlab.com:51158/heroku_wggvt9x9");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://user1:password1@ds251158.mlab.com:51158/heroku_wggvt9x9");
 
 // Start the API server
-app.listen(process.env.PORT || PORT, function() {
+app.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
