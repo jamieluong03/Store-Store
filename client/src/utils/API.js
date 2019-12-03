@@ -4,23 +4,23 @@ import data from "../data.json";
 export default {
   // Gets all products
   getProducts: function(query = "") {
-    return axios.get("http://localhost:3001/api/products?q=" + query);
+    return axios.get("/api/products?q=" + query);
   },
   // Gets the product with the given id
   getProduct: function(id) {
-    return axios.get("http://localhost:3001/api/products/" + id);
+    return axios.get("/api/products/" + id);
   },
   // Get category
   getClass: function(query) {
-    return axios.get("http://localhost:3001/api/products/category?q=" + query);
+    return axios.get("/api/products/category?q=" + query);
   },
   // Deletes the product with the given id
   deleteProduct: function(id) {
-    return axios.delete("http://localhost:3001/api/products/" + id);
+    return axios.delete("/api/products/" + id);
   },
   // Saves a product to the database
   saveProduct: function(productData) {
-    return axios.post("http://localhost:3001/api/products", productData);
+    return axios.post("/api/products", productData);
   },
 
   // Gets a single user by id
