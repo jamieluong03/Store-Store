@@ -91,7 +91,7 @@ const Detail = props => {
   };
 
   return (
-    <>
+    <div>
       {state.currentProduct
        && state.cart
        ? (
@@ -139,14 +139,14 @@ const Detail = props => {
                       <strong>Width:</strong>
                       {state.currentProduct.width}
                     </div>
-                    : <></>
+                    : <div></div>
                   }
                   {state.currentProduct.weight ? 
                     <div>
                       <strong>Weight:</strong>
                       {state.currentProduct.weight}
                     </div>
-                    : <></>
+                    : <div></div>
                   }
                 </div>
               </div>
@@ -159,7 +159,7 @@ const Detail = props => {
       ) : (
         <div>loading...</div>
       )}
-    </>
+    </div>
   );
 };
 

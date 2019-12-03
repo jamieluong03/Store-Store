@@ -26,7 +26,7 @@ function CategoryMenu() {
           {store.loading ? (
             <a className="navbar-brand ml-auto">Loading...</a>
           ) : (
-            <></>
+            <div></div>
           )}
         </Col>
         <div className="category-heading" >

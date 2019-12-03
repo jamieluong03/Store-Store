@@ -58,7 +58,7 @@ function Nav() {
       {store.loading ? (
         <a className="navbar-brand ml-auto">Loading...</a>
       ) : (
-        <></>
+        <div></div>
       )}
     </nav>
   );

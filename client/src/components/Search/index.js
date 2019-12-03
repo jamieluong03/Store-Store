@@ -4,12 +4,12 @@ import SearchForm from "../SearchForm";
 
 function Search() {
   return (
-    <>
+    <div>
       <Container >
         <p className="text-center"></p>
         <SearchForm />
       </Container>
-    </>
+    </div>
   );
 }
 
